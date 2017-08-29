@@ -84,6 +84,8 @@ function wc_custom_user_redirect( $redirect, $user ) {
         $woocommerce->cart->add_to_cart($item['product_id'], $item['quantity']);
     }
     
+    // save to persistent again
+    WC_Cart::persistent_cart_update();
    
     return $redirect;
 }
